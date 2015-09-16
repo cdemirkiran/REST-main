@@ -15,60 +15,98 @@ Group of all pieces related resources.
 
 ## Piece [/pieces/{piece_id}]
 
+A Piece is the ...
+
++ Parameters
+    + piece_id: `1` (integer) - The id of the Piece.
+
+
 + Model (application/json)
-    
-    This is the piece resource representation.
 
     ```json
     {
-	"data": {
-	    "id": 8530,
-	    "title": "art1",
-	    "artist_name": "art1",
-	    "num_editions": 5,
-	    "user_registered": "foo2",
-	    "datetime_registered": "2015-07-01T13:33:38.390154Z",
-	    "date_created": "2015-01-01",
-	    "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
-	    "license_type": {
-		"name": "Attribution without restriction",
-		"code": "default",
-		"organization": "ascribe",
-		"url": "https://www.ascribe.io/faq/#legals"
-	    }
-	},
-	"meta": {
-	    "code": 200,
-	}
+        "data": {
+            "id": 8530,
+            "title": "art1",
+            "artist_name": "art1",
+            "num_editions": 5,
+            "user_registered": "foo2",
+            "datetime_registered": "2015-07-01T13:33:38.390154Z",
+            "date_created": "2015-01-01",
+            "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+            "license_type": {
+                "name": "Attribution without restriction",
+                "code": "default",
+                "organization": "ascribe",
+                "url": "https://www.ascribe.io/faq/#legals"
+            }
+        },
+        "meta": {
+            "code": 200,
+        }
     }
     ```
+
+### Retrieve a Piece [GET]
+Returns a specific Piece.
+
++ Response 200
+
+    [Piece][]
+
+### Delete a Piece [DELETE]
+Delete a Piece.
+
++ Response 204
 
 
 
 ## Piece Collection [/pieces]
 
+A collection of pieces.
+
 + Model (application/json)
 
     ```json
     {
-	"pieces": [
-	    {
-		"id": 8530,
-		"title": "art1",
-		"artist_name": "art1",
-		"num_editions": 5,
-		"user_registered": "foo2",
-		"datetime_registered": "2015-07-01T13:33:38.390154Z",
-		"date_created": "2015-01-01",
-		"thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
-		"license_type": {
-		    "name": "Attribution without restriction",
-		    "code": "default",
-		    "organization": "ascribe",
-		    "url": "https://www.ascribe.io/faq/#legals"
-		}
-	    },
-	    ...
-	]
+        "pieces": [
+            {
+                "id": 8530,
+                "title": "art1",
+                "artist_name": "art1",
+                "num_editions": 5,
+                "user_registered": "foo2",
+                "datetime_registered": "2015-07-01T13:33:38.390154Z",
+                "date_created": "2015-01-01",
+                "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+                "license_type": {
+                    "name": "Attribution without restriction",
+                    "code": "default",
+                    "organization": "ascribe",
+                    "url": "https://www.ascribe.io/faq/#legals"
+                }
+            }
+        ]
     }
     ```
+
+### Create a Piece [POST]
+
+Create a new Piece object.
+
++ Request
+
+    [Piece][]
+
++ Response 201
+
+    [Piece][]
+
+    
+### Retrieve all Pieces [GET]
+
+Retrieves all pieces.
+
++ Response 200
+
+    [Piece Collection][]

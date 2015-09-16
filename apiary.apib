@@ -7,3 +7,68 @@ Main RESTful API for ascribe ownership web service. https://www.ascribe.io
 
 - First public release: 2015-04-26
 - Current public release: 2015-07-01, version 0.1
+
+
+# Group Pieces
+
+Group of all pieces related resources.
+
+## Piece [/pieces/{piece_id}]
+
++ Model (application/json)
+    
+    This is the piece resource representation.
+
+    ```json
+    {
+        "data": {
+	    "id": 8530,
+	    "title": "art1",
+	    "artist_name": "art1",
+	    "num_editions": 5,
+	    "user_registered": "foo2",
+	    "datetime_registered": "2015-07-01T13:33:38.390154Z",
+	    "date_created": "2015-01-01",
+	    "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+	    "license_type": {
+	        "name": "Attribution without restriction",
+	        "code": "default",
+	        "organization": "ascribe",
+	        "url": "https://www.ascribe.io/faq/#legals"
+	    }
+	},
+	"meta": {
+            "code": 200,
+        }
+    }
+    ```
+
+
+
+## Piece Collection [/pieces]
+
++ Model (application/json)
+
+    ```json
+    {
+	"pieces": [
+	    {
+		"id": 8530,
+		"title": "art1",
+		"artist_name": "art1",
+		"num_editions": 5,
+		"user_registered": "foo2",
+		"datetime_registered": "2015-07-01T13:33:38.390154Z",
+		"date_created": "2015-01-01",
+		"thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+		"license_type": {
+		    "name": "Attribution without restriction",
+		    "code": "default",
+		    "organization": "ascribe",
+		    "url": "https://www.ascribe.io/faq/#legals"
+		}
+	    },
+        ...
+	]
+    }
+    ```

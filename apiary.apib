@@ -472,3 +472,60 @@ Lists all Registrations.
 + Response 200
 
     [Registration Collection][]
+    
+    
+
+## Transfer [/ownership/transfers/{id}/]
+
++ Parameters
+    + id (integer) - The ID of the transfer.
+
++ Model (application/json)
+
+    ```json
+    {
+    }
+    ```
+
+### Retrieve a transfer [GET]
+
++ Response 200
+
+    [Transfer][]
+
+### Delete a Transfer [DELETE]
+
++ Response 204
+
+
+## Transfer Collection [/ownership/transfers/]
+
++ Model (application/json)
+
+    ```json
+    {
+        "transfers": [
+            {},
+            {},
+            {},
+            ...
+        ]
+    }
+    ```
+
+### Create a Transfer [POST]
+
++ Request
+
+    [Transfer][]
+
++ Response 201
+
+    [Transfer][]
+
+    
+### List all Transfers [GET]
+
++ Response 200
+
+    [Transfer Collection][]

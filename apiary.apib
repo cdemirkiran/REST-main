@@ -529,3 +529,60 @@ Lists all Registrations.
 + Response 200
 
     [Transfer Collection][]
+
+
+
+## Consignment [/ownership/consigns/{id}/]
+
++ Parameters
+    + id (integer) - The ID of the consignment
+
++ Model (application/json)
+
+    ```json
+    {
+    }
+    ```
+
+### Retrieve a consignment [GET]
+
++ Response 200
+
+    [Consignment][]
+
+### Delete a consignment [DELETE]
+
++ Response 204
+
+
+## Consignment Collection [/ownership/consigns/]
+
++ Model (application/json)
+
+    ```json
+    {
+        "consigns": [
+            {},
+            {},
+            {},
+            ...
+        ]
+    }
+    ```
+
+### Create a Consign [POST]
+
++ Request
+
+    [Consignment][]
+
++ Response 201
+
+    [Consignment][]
+
+    
+### List all Consigns [GET]
+
++ Response 200
+
+    [Consignment Collection][]

@@ -431,7 +431,7 @@ Delete a Registration.
                         "canSubmit": false
                     }
                 },
-                "prev_owner": {
+                "prev_owner": {
                     "email": "foo@mailinator.com",
                     "username": "foo",
                     "id": 1349,
@@ -529,9 +529,9 @@ Lists all Registrations.
 + Response 200
 
     [Transfer Collection][]
-
-
-
+    
+    
+    
 ## Consignment [/ownership/consigns/{id}/]
 
 + Parameters
@@ -570,7 +570,7 @@ Lists all Registrations.
     }
     ```
 
-### Create a Consign [POST]
+### Create a consignment [POST]
 
 + Request
 
@@ -581,8 +581,145 @@ Lists all Registrations.
     [Consignment][]
 
     
-### List all Consigns [GET]
+### List all consignments [GET]
 
 + Response 200
 
     [Consignment Collection][]
+    
+    
+## Unconsignment [/ownership/unconsigns/{id}/]
+
++ Parameters
+    + id (integer) - The ID of the unconsignment
+
++ Model (application/json)
+
+    ```json
+    {
+    }
+    ```
+
+### Retrieve a unconsignment [GET]
+
++ Response 200
+
+    [Unconsignment][]
+
+### Delete an unconsignment [DELETE]
+
++ Response 204
+
+
+## Unconsignment Collection [/ownership/unconsigns/]
+
++ Model (application/json)
+
+    ```json
+    {
+        "unconsigns": [
+            {},
+            {},
+            {},
+            ...
+        ]
+    }
+    ```
+
+### Create an Unconsignment [POST]
+
++ Request
+
+    [Unconsignment][]
+
++ Response 201
+
+    [Unconsignment][]
+
+    
+### List all Unconsignments [GET]
+
++ Response 200
+
+    [Unconsignment Collection][]
+    
+    
+    
+## Loan [/ownership/loans/{id}/]
+
++ Parameters
+    + id (integer) - The ID of the loan
+
++ Model (application/json)
+
+    ```json
+    {
+    }
+    ```
+
+### Retrieve a loan [GET]
+
++ Response 200
+
+    [Loan][]
+
+### Delete an loan [DELETE]
+
++ Response 204
+
+
+## Loaned Pieces [/ownership/loans/pieces/]
+
++ Model (application/json)
+
+    ```json
+    {
+        "loans": [
+            {},
+            {},
+            {},
+            ...
+        ]
+    }
+    ```
+
+### List all loans for pieces [GET]
+
++ Response 200
+
+    [Loaned Pieces][]
+
+
+## Loaned Editions [/ownership/loans/editions/]
+
+### Lend an edtion [POST]
+
++ Request
+
+    + Header
+        
+            Authorization: Bearer 2GJT0yFOnHYKtp9sgNak4GURL9jpKD
+    
+    + Body
+    
+            {
+                "bitcoin_id": "157od1WGsmh7ctYXEstTbsA7pzx6BoWU9W",
+                "loanee": "foo@mailinator.com",
+                "password": "mypassword",
+                "startdate": "2015-05-29",
+                "enddate": "2015-06-01",
+                "loan_message": "I loan this piece to you"
+            }
+
++ Response 201
+
+        {
+            "notification": "You have successfully loaned 1 edition(s) to foo2@mailinator.com, pending their confirmation.",
+            "success": true
+        }
+        
+### List all loans for edtitons [GET]
+
++ Response 200
+
+        {}

@@ -146,7 +146,7 @@ Piece related resources.
 ## Edition [/editions/{bitcoin_id}/]
 
 + Parameters
-    + bitcoin_id (string) - The bitcoin ID of the edition.
+    + bitcoin_id (string) - The bitcoin ID of the edition
     
 + Model (application/json)
 
@@ -216,14 +216,24 @@ Piece related resources.
     
 ### Retrieve an Edition [GET]
 
++ Request
+
+    + Header
+            
+            Authorization: Bearer 2GJT0yFOnHYKtp9sgNak4GURL9jpKD
+
 + Response 200
 
     [Edition][]
 
 ### Delete an Edition [DELETE]
 
-+ Response 204
++ Response 200
 
+        {
+            "notification": "You have successfully deleted 1 editions.",
+            "success": true
+        }
 
 
 ## Edition Collection [/editions/]
@@ -265,13 +275,29 @@ Piece related resources.
 
 ### Create an Edition [POST]
 
-+ Request
++ Attributes
+    + piece_id (number) - The ID of the piece
+    + num_editions (number) - Number of editions for the piece
 
-    [Edition][]
++ Request (application/json)
+
+    + Header
+        
+            Authorization: Bearer 2GJT0yFOnHYKtp9sgNak4GURL9jpKD
+    
+    + Body
+    
+            {
+                "piece_id": 1071,
+                "num_editions": 10
+            } 
 
 + Response 201
 
-    [Edition][]
+        {
+            "success": true,
+            "notification": "You successfully registered 10 editions for piece with ID 1ADJ5fYt1Hq4acL3e7gVr7st6SD8rZq51d."
+        }
 
     
 ### List all Editions [GET]

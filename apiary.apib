@@ -50,11 +50,9 @@ An in-depth specification of the protocol can be found on
 
 # Group Pieces
 
-Group of all pieces related resources.
+Piece related resources.
 
 ## Piece [/pieces/{piece_id}/]
-
-A Piece is the ...
 
 + Parameters
     + piece_id (integer) - The id of the Piece.
@@ -87,22 +85,18 @@ A Piece is the ...
     ```
 
 ### Retrieve a Piece [GET]
-Returns a specific Piece.
 
 + Response 200
 
     [Piece][]
 
 ### Delete a Piece [DELETE]
-Delete a Piece.
 
 + Response 204
 
 
 
 ## Piece Collection [/pieces/]
-
-A collection of pieces.
 
 + Model (application/json)
 
@@ -131,8 +125,6 @@ A collection of pieces.
 
 ### Create a Piece [POST]
 
-Create a new Piece object.
-
 + Request
 
     [Piece][]
@@ -144,8 +136,6 @@ Create a new Piece object.
     
 ### List all Pieces [GET]
 
-Lists all pieces.
-
 + Response 200
 
     [Piece Collection][]
@@ -153,11 +143,7 @@ Lists all pieces.
     
 # Group Editions
 
-Group of all editions related resources.
-
 ## Edition [/editions/{bitcoin_id}/]
-
-An Edition is ...
 
 + Parameters
     + bitcoin_id (string) - The bitcoin ID of the edition.
@@ -229,22 +215,18 @@ An Edition is ...
     ```
     
 ### Retrieve an Edition [GET]
-Returns a specific Edition.
 
 + Response 200
 
     [Edition][]
 
 ### Delete an Edition [DELETE]
-Delete an Edition.
 
 + Response 204
 
 
 
 ## Edition Collection [/editions/]
-
-A collection of editions.
 
 + Model (application/json)
 
@@ -283,8 +265,6 @@ A collection of editions.
 
 ### Create an Edition [POST]
 
-Create a new Edition object.
-
 + Request
 
     [Edition][]
@@ -295,8 +275,6 @@ Create a new Edition object.
 
     
 ### List all Editions [GET]
-
-Lists all editions.
 
 + Response 200
 
@@ -374,14 +352,12 @@ ownership action (transfer, consign, loan, ...) has been performed.
     ```
 
 ### Retrieve a registration [GET]
-Returns a specific Registration.
 
 + Response 200
 
     [Registration][]
 
 ### Delete a Registration [DELETE]
-Delete a Registration.
 
 + Response 204
 
@@ -454,8 +430,6 @@ Delete a Registration.
 
 ### Create a Registration [POST]
 
-Create a new Registration object.
-
 + Request
 
     [Registration][]
@@ -466,8 +440,6 @@ Create a new Registration object.
 
     
 ### List all Registrations [GET]
-
-Lists all Registrations.
 
 + Response 200
 

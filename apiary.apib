@@ -301,3 +301,174 @@ Lists all editions.
 + Response 200
 
     [Edition Collection][]
+    
+    
+# Group Ownership
+
+The rich ownership layer of ascribe you allows to manage your digital assets.
+
+A piece is registered in the blockchain upon creation. When the number of editions
+is specified, each edition is only registered in the blockchain right before any
+ownership action (transfer, consign, loan, ...) has been performed.
+
+
+## Registration [/ownership/registrations/{id}/]
+
++ Parameters
+    + id (integer) - The ID of the registration.
+
++ Model (application/json)
+
+    ```json
+    "registration": {
+        "id": 5443,
+        "piece": {
+            "id": 8530,
+            "title": "art1",
+            "artist_name": "art1",
+            "num_editions": 50,
+            "user_registered": "foo",
+            "datetime_registered": "2015-07-01T09:48:51.037053Z",
+            "date_created": "2015-01-01",
+            "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png"
+        },
+        "type": "OwnershipRegistration",
+        "datetime": "2015-07-01T09:48:51.497008Z",
+        "btc_tx": {
+            "datetime": "2015-07-01T09:48:51.587300Z",
+            "service": "<bitcoin.bitcoin_service.BitcoinDaemonMainnetService object at 0x7fb776b9a090>",
+            "from_address": "12udvE3zmbQLhtSGZUqqAvGWSKDUCpbgoq",
+            "inputs": "[{'output': 'c63b6cfcda31371d94e28a734dcc0acbcd30047c03c23340601d806851d711f6:3', 'value': 28200}]",
+            "outputs": "[{'value': 600, 'address': u'1NHXUfW1MfKsU83yGY52xrTDVux8UwMXio'}, {'value': 600, 'address': u'1HCnLDnbHvgddPKGkkYXaQtLZzbc23P3cE'}, {'value': 600, 'address': u'1CAiGhr6dSmrABAJud47PaUtZ8qvn88Tc4'}]",
+            "mining_fee": 10000,
+            "tx": "ea382a621f0f91a1a2291b3a8382d56ad049938dac9a2d3da73253d03be4f536",
+            "block_height": null,
+            "status": 2,
+            "spoolverb": "ASCRIBESPOOL01REGISTER0"
+        },
+        "new_owner": {
+            "email": "foo@mailinator.com",
+            "username": "foo",
+            "id": 1349,
+            "prize_role": {
+                "type": "",
+                "prize": {"name": ""},
+                "round": null,
+                "canVote": false,
+                "canSubmit": false
+            }
+        },
+        "prev_owner": {
+            "email": "foo@mailinator.com",
+            "username": "foo",
+            "id": 1349,
+            "prize_role": {
+                "type": "",
+                "prize": {"name": ""},
+                "round": null,
+                "canVote": false,
+                "canSubmit": false
+            }
+        }
+    }
+    ```
+
+### Retrieve a registration [GET]
+Returns a specific Registration.
+
++ Response 200
+
+    [Registration][]
+
+### Delete a Registration [DELETE]
+Delete a Registration.
+
++ Response 204
+
+
+## Registration Collection [/ownership/registrations/]
+
++ Model (application/json)
+
+    ```json
+    {
+        "registrations": [
+            {
+                "id": 5443,
+                "piece": {
+                    "id": 8530,
+                    "title": "art1",
+                    "artist_name": "art1",
+                    "num_editions": 50,
+                    "user_registered": "foo",
+                    "datetime_registered": "2015-07-01T09:48:51.037053Z",
+                    "date_created": "2015-01-01",
+                    "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png"
+                },
+                "type": "OwnershipRegistration",
+                "datetime": "2015-07-01T09:48:51.497008Z",
+                "btc_tx": {
+                    "datetime": "2015-07-01T09:48:51.587300Z",
+                    "service": "<bitcoin.bitcoin_service.BitcoinDaemonMainnetService object at 0x7fb776c20cd0>",
+                    "from_address": "12udvE3zmbQLhtSGZUqqAvGWSKDUCpbgoq",
+                    "inputs": "[{'output': 'c63b6cfcda31371d94e28a734dcc0acbcd30047c03c23340601d806851d711f6:3', 'value': 28200}]",
+                    "outputs": "[{'value': 600, 'address': u'1NHXUfW1MfKsU83yGY52xrTDVux8UwMXio'}, {'value': 600, 'address': u'1HCnLDnbHvgddPKGkkYXaQtLZzbc23P3cE'}, {'value': 600, 'address': u'1CAiGhr6dSmrABAJud47PaUtZ8qvn88Tc4'}]",
+                    "mining_fee": 10000,
+                    "tx": "ea382a621f0f91a1a2291b3a8382d56ad049938dac9a2d3da73253d03be4f536",
+                    "block_height": null,
+                    "status": 2,
+                    "spoolverb": "ASCRIBESPOOL01REGISTER0"
+                },
+                "new_owner": {
+                    "email": "foo@mailinator.com",
+                    "username": "foo",
+                    "id": 1349,
+                    "prize_role": {
+                        "type": "",
+                        "prize": {"name": ""},
+                        "round": null,
+                        "canVote": false,
+                        "canSubmit": false
+                    }
+                },
+                "prev_owner": {
+                    "email": "foo@mailinator.com",
+                    "username": "foo",
+                    "id": 1349,
+                    "prize_role": {
+                        "type": "",
+                        "prize": {"name": ""},
+                        "round": null,
+                        "canVote": false,
+                        "canSubmit": false
+                    }
+                },
+                "new_btc_address": null,
+                "prev_btc_address": "12udvE3zmbQLhtSGZUqqAvGWSKDUCpbgoq",
+                "status": null
+            },
+            ...
+        ]
+    }
+    ```
+
+### Create a Registration [POST]
+
+Create a new Registration object.
+
++ Request
+
+    [Registration][]
+
++ Response 201
+
+    [Registration][]
+
+    
+### List all Registrations [GET]
+
+Lists all Registrations.
+
++ Response 200
+
+    [Registration Collection][]

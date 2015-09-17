@@ -149,3 +149,155 @@ Retrieves all pieces.
 + Response 200
 
     [Piece Collection][]
+    
+    
+# Group Editions
+
+Group of all editions related resources.
+
+## Edition [/editions/{bitcoin_id}/]
+
+An Edition is ...
+
++ Parameters
+    + bitcoin_id (string) - The bitcoin ID of the edition.
+    
++ Model (application/json)
+
+    ```json
+    {
+        "edition": {
+            "id": 8531,
+            "title": "art1",
+            "artist_name": "art1",
+            "num_editions": 50,
+            "user_registered": "foo",
+            "datetime_registered": "2015-07-01T09:48:51.037Z",
+            "date_created": "2015-01-01",
+            "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+            "edition_number": 1,
+            "bitcoin_id": "1N1kaRd7A3vYR4d1sfysPHQMMURoHCtmWY",
+            "acl": [
+                "edit",
+                "consign",
+                "transfer",
+                "loan",
+                "share",
+                "download",
+                "view",
+                "delete",
+                "coa"
+            ],
+            "request_action": null,
+            "parent": 8530,
+            "extra_data": {},
+            "digital_work": {
+                "id": 1890,
+                "url": "https://d1qjsxua1o9x03.cloudfront.net/local/foo/images-18/digitalwork/images-18.jpeg",
+                "url_safe": "https://d1qjsxua1o9x03.cloudfront.net/local%2Ffoo%2Fimages-18%2Fdigitalwork%2Fimages-18.jpeg",
+                "mime": "image",
+                "hash": "39971523c58d1d605b6b3f0e96803c25",
+                "encoding_urls": null,
+                "isEncoding": 0
+            },
+            "other_data": null,
+            "hash_as_address": "14Ab6qQcg2CaCE8RBrJtSFqEjsiremApXC",
+            "owner": "foo",
+            "btc_owner_address_noprefix": "1N1kaRd7A3vYR4d1sfysPHQMMURoHCtmWY",
+            "ownership_history": [
+                [
+                    "Jul. 01, 2015, 09:48:51",
+                    "Registered by foo"
+                ]
+            ],
+            "consign_history": [],
+            "loan_history": [],
+            "coa": null,
+            "status": [],
+            "pending_new_owner": null,
+            "consignee": null,
+            "note_from_user": null,
+            "public_note": null,
+            "license_type": {
+                "name": "Attribution without restriction",
+                "code": "default",
+                "organization": "ascribe",
+                "url": "https://www.ascribe.io/faq/#legals"
+            }
+        }
+    }
+    ```
+    
+### Retrieve an Edition [GET]
+Returns a specific Edition.
+
++ Response 200
+
+    [Edition][]
+
+### Delete an Edition [DELETE]
+Delete an Edition.
+
++ Response 204
+
+
+
+## Edition Collection [/editions/]
+
+A collection of editions.
+
++ Model (application/json)
+
+    ```json
+    {
+        "editions": [
+            {
+                "id": 8530,
+                "title": "art1",
+                "artist_name": "art1",
+                "num_editions": 50,
+                "user_registered": "foo",
+                "datetime_registered": "2015-07-01T09:48:51.037Z",
+                "date_created": "2015-01-01",
+                "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+                "edition_number": 0,
+                "bitcoin_id": "1CAiGhr6dSmrABAJud47PaUtZ8qvn88Tc4",
+                "acl": [
+                    "edit",
+                    "consign",
+                    "transfer",
+                    "loan",
+                    "share",
+                    "download",
+                    "view",
+                    "delete",
+                    "coa"
+                ],
+                "request_action": null,
+                "parent": 8530
+            },
+            ...
+        ]
+    }
+    ```
+
+### Create an Edition [POST]
+
+Create a new Edition object.
+
++ Request
+
+    [Edition][]
+
++ Response 201
+
+    [Edition][]
+
+    
+### List all Editions [GET]
+
+Lists all editions.
+
++ Response 200
+
+    [Edition Collection][]

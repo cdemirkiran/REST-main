@@ -131,13 +131,64 @@ Piece related resources.
 
 ### Create a Piece [POST]
 
-+ Request
++ Attributes
+    + file_url (string) - The url of the digital file
+    + title (string) - The title of the artwork
+    + artist_name (string) - The artist name
+    + date_created (string, optional) - <YYYY-MM-DD> The creation date
+    + num_editions (number, optional) - The number of editions (will create as many pieces)
+    + consign (boolean, optional) - Set to True if the marketplace acts as a consignee
+    
++ Request (application/json)
 
-    [Piece][]
+    + Header
+        
+            Authorization: Bearer <your_api_token>
+    + Body
+    
+            {
+                "file_url": "https://ascribe0.s3.amazonaws.com/local/admin@makx.com/elmo/digitalworkfile/elmo.jpg",
+                "title": "New Piece",
+                "artist_name": "New Artist"
+            }
 
-+ Response 201
++ Response 201 (application/json)
 
-    [Piece][]
+        {
+            "notification": "You have successfully registered \"New Piece\" by New Artist, 1 editions.",
+            "success": true,
+            "edition": {
+                "id": 8542,
+                "title": "New Piece",
+                "artist_name": "New Artist",
+                "num_editions": 1,
+                "user_registered": "foo2",
+                "datetime_registered": "2015-07-01T13:40:28.635Z",
+                "date_created": "2015-01-01",
+                "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/local/foo2/ascribe_animated_medium/thumbnail/ascribe_animated_medium.gif.png",
+                "license_type": {
+                    "name": "Attribution without restriction",
+                    "code": "default",
+                    "organization": "ascribe",
+                    "url": "https://www.ascribe.io/faq/#legals"
+                },
+                "edition_number": 0,
+                "bitcoin_id": "13Ftd8yNMJPwRA9EaYpctd2TSjKgi9duoz",
+                "acl": [    
+                    "edit",
+                    "consign",
+                    "transfer",
+                    "loan",
+                    "share",
+                    "download",
+                    "view",
+                    "delete",
+                    "coa"
+                ],
+                "request_action": null,
+                "parent": 8532
+            }
+        }
 
     
 ### List all Pieces [GET]

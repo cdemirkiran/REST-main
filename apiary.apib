@@ -50,57 +50,6 @@ An in-depth specification of the protocol can be found on
 
 # Group Pieces
 
-
-## Piece [/pieces/{piece_id}/]
-
-+ Parameters
-    + piece_id (integer) - The id of the Piece.
-
-
-+ Model (application/json)
-
-    ```json
-    {
-        "data": {
-            "id": 8530,
-            "title": "art1",
-            "artist_name": "art1",
-            "num_editions": 5,
-            "user_registered": "foo2",
-            "datetime_registered": "2015-07-01T13:33:38.390154Z",
-            "date_created": "2015-01-01",
-            "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
-            "license_type": {
-                "name": "Attribution without restriction",
-                "code": "default",
-                "organization": "ascribe",
-                "url": "https://www.ascribe.io/faq/#legals"
-            }
-        },
-        "meta": {
-            "code": 200,
-        }
-    }
-    ```
-
-### Retrieve a Piece [GET]
-
-+ Request
-
-    + Header
-
-            Authorization: Bearer 2GJT0yFOnHYKtp9sgNak4GURL9jpKD
-
-+ Response 200
-
-    [Piece][]
-
-### Delete a Piece [DELETE]
-
-+ Response 204
-
-
-
 ## Piece Collection [/pieces/]
 
 + Model (application/json)
@@ -196,6 +145,58 @@ An in-depth specification of the protocol can be found on
 
     [Piece Collection][]
     
+
+## Piece [/pieces/{piece_id}/]
+
++ Parameters
+    + piece_id (integer) - The id of the Piece.
+
+
++ Model (application/json)
+
+    ```json
+    {
+        "data": {
+            "id": 8530,
+            "title": "art1",
+            "artist_name": "art1",
+            "num_editions": 5,
+            "user_registered": "foo2",
+            "datetime_registered": "2015-07-01T13:33:38.390154Z",
+            "date_created": "2015-01-01",
+            "thumbnail": "https://d1qjsxua1o9x03.cloudfront.net/media/thumbnails/ascribe_spiral.png",
+            "license_type": {
+                "name": "Attribution without restriction",
+                "code": "default",
+                "organization": "ascribe",
+                "url": "https://www.ascribe.io/faq/#legals"
+            }
+        },
+        "meta": {
+            "code": 200,
+        }
+    }
+    ```
+
+### Retrieve a Piece [GET]
+
++ Request
+
+    + Header
+
+            Authorization: Bearer 2GJT0yFOnHYKtp9sgNak4GURL9jpKD
+
++ Response 200
+
+    [Piece][]
+
+### Delete a Piece [DELETE]
+
++ Response 204
+
+
+
+
     
 # Group Editions
 
